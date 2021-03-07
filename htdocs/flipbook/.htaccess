@@ -1,0 +1,4 @@
+#RewriteEngine On
+#RewriteCond %{HTTP_REFERER} !^https://unionpresse.fr/up_last_issue/ekiosk
+#RewriteCond %{HTTP_REFERER} !^https://unionpresse.fr/up_search_results
+#RewriteRule .*\.htm - [NC,F]

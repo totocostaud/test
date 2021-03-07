@@ -1,0 +1,187 @@
+/**
+ * @file
+ * Overall specifications for Culturepresse.
+ */
+
+/**
+ * Styling Main Menu (#superfish-main) - css form Superfish library 'THEMES.txt'
+ * items :
+ * Accueil = #main-standardfront-page
+ * Gérer La Tribune = #main-menu-link-contente07ce2d4-3fdf-442e-b4fa-2e58e2ff2efd
+ *
+ * Largeur des sous-menus réglée dans config block superfish 'supersubs'
+ */
+
+.region-primary-menu {
+  margin-left: 1em;
+}
+#superfish-main {
+  font-family: Marvel, Arial, Sans-serif;
+  font-size: 1.25em;
+  font-weight: normal;
+  color: #000000;
+  float: left;
+  width: 70%;
+  margin: 10px 0 0 0;
+  padding: 0;
+  border-top : 1px solid #EDEDED;
+  border-bottom : 1px solid #EDEDED;
+}
+#superfish-main  .sf-main {
+  width: 100%;
+}
+#superfish-main  a,
+#superfish-main  span.nolink {
+  color: #000000;
+  padding: 0.3em 1.5em 0.4em 1.5em;
+  margin: 0;
+}
+#superfish-main  a.sf-with-ul,
+#superfish-main  span.nolink.sf-with-ul {
+  padding-right: 0;
+  padding: 0.2em 1.5em 0.35em 1.5em;
+}
+#superfish-main  li,
+#superfish-main  .sf-main {
+  background: #FFFFFF;
+  margin: 0;
+}
+#superfish-main   li li {
+  font-size: 75%;
+}
+#superfish-main  li li li {
+  font-size: 100%;
+}
+
+/* Accueil */
+#superfish-main #main-standardfront-page li:hover,
+#superfish-main #main-standardfront-page li.sfHover,
+#superfish-main #main-standardfront-page a:focus,
+#superfish-main #main-standardfront-page a:hover,
+#superfish-main #main-standardfront-page a:active,
+#superfish-main #main-standardfront-pagespan.nolink:hover {
+  background: #F8F8F8;
+  outline: 0;
+}
+/* Gérer La Tribune */
+#superfish-main #main-menu-link-contente07ce2d4-3fdf-442e-b4fa-2e58e2ff2efd li:hover,
+#superfish-main #main-menu-link-contente07ce2d4-3fdf-442e-b4fa-2e58e2ff2efd li.sfHover,
+#superfish-main #main-menu-link-contente07ce2d4-3fdf-442e-b4fa-2e58e2ff2efd a:focus,
+#superfish-main #main-menu-link-contente07ce2d4-3fdf-442e-b4fa-2e58e2ff2efd a:hover,
+#superfish-main #main-menu-link-contente07ce2d4-3fdf-442e-b4fa-2e58e2ff2efd a:active,
+#superfish-main #main-menu-link-contente07ce2d4-3fdf-442e-b4fa-2e58e2ff2efd span.nolink:hover {
+  background: #f5a51d;
+  outline: 0;
+}
+
+/* keeping bg color and changing text color in menuparent (items 3 & 4) when opened and li li:hover */
+.sf-menu li#main-menu-link-contente07ce2d4-3fdf-442e-b4fa-2e58e2ff2efd:hover > a, 
+.sf-menu li#main-menu-link-contente07ce2d4-3fdf-442e-b4fa-2e58e2ff2efd.sfhover > a {
+  font-weight: normal;
+  color: #FFFFFF;
+  background: #009EE3;
+}
+
+
+/* Added for mobile menu */
+/*@media screen and (max-width: 768px) {*/
+@media (max-width: 1168px) {
+  #block-menuprincipal {
+    width : 97%;
+    background-color: #6195A8;
+  }
+}
+#superfish-main-toggle span {
+      color: #FFF;
+}
+ul#superfish-main-accordion {
+  text-align: left;
+  margin-top : 3px;
+}
+
+/**
+ *  Menu ENGAGEMENT in Right sidebar
+ *    Demandez à être rappelé(e)
+ *    Recevez nos newsletters
+ *    Adhérez à Culture Presse
+ */
+#block-engagement-2 {
+  max-width: 12.2em;
+  font-size: 0.93em;
+  height: 21.8em;
+  padding: 1em 1.5em 1em 1.5em;
+  margin-bottom: 1em;
+  border: 6px solid #EDEDED;
+  clear: both;
+  background-color: #FFFFFF;
+}
+
+#block-engagement-2 ul,
+#block-engagement-2 ul li {
+  list-style: none;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+#block-engagement-2 #engagement-menu-link-content980675a1-c3c7-49df-be99-1528f6cc18ab a {
+  background-image: url('/sites/default/files/images/theme/menu_engagement/picto_telephone.png');
+  background-repeat: no-repeat;
+  background-position: 4em 1em;
+  padding: 6.5em 0 0 0;
+  color: #877;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+#block-engagement-2 #engagement-menu-link-content980675a1-c3c7-49df-be99-1528f6cc18ab a:hover {
+  background-image: url('/sites/default/files/images/theme/menu_engagement/picto_telephone_noir.png');
+}
+
+#block-engagement-2 #engagement-menu-link-contentc6df0c4d-c166-423b-b842-f34d5b868907 a {
+  background-image: url('/sites/default/files/images/theme/menu_engagement/picto_newsletter.png');
+  background-repeat: no-repeat;
+  background-position: 4em 1em;
+  padding: 6.5em 0 0 0;
+  color: #877;
+  border-bottom: 1px solid #333;
+}
+#block-engagement-2 #engagement-menu-link-contentc6df0c4d-c166-423b-b842-f34d5b868907 a:hover {
+  background-image: url('/sites/default/files/images/theme/menu_engagement/picto_newsletter_noir.png');
+}
+#block-engagement-2 #engagement-menu-link-content8cd295e4-66d9-4d9d-b9b9-2f960f79cd5c a {
+  background-image: url('/sites/default/files/images/theme/menu_engagement/picto_adhesion.png');
+  background-repeat: no-repeat;
+  background-position: 4em 1em;
+  padding: 6.5em 0 0 0;
+  color: #877;
+  border-bottom: 1px solid #333;
+}
+#block-engagement-2 #engagement-menu-link-content8cd295e4-66d9-4d9d-b9b9-2f960f79cd5c a:hover {
+  background-image: url('/sites/default/files/images/theme/menu_engagement/picto_adhesion_noir.png');
+}
+
+
+/**
+ *  Menu OUTILS in Right sidebar
+ *  Links to create or modify nodes and contacts Culture Presse
+ *
+ */
+nav#block-culturepresse-tools {
+  width: 15em;
+  padding: 0 0 0.5em 0;
+  border: 4px solid #EDEDED;
+  background-color: #FFFFCC;
+}
+
+nav#block-culturepresse-tools h2 {
+  font-size: 1.6em;
+  color: #FFF;
+  padding: 0 1em 0 0.5em;
+  background-color: #6195A8;
+}
+
+nav#block-culturepresse-tools h2:after {
+  content: " > Liens vers l'ajout ou la modification de contenus";
+  font-size: 0.7em;
+}
+

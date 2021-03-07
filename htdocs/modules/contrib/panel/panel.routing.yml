@@ -1,0 +1,7 @@
+panel.description:
+  path: '/panel'
+  defaults:
+    _controller: '\Drupal\panel\Controller\PanelController::content'
+    _title: 'Panel'
+  requirements:
+    _permission: 'access content'
