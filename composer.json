@@ -35,7 +35,6 @@
 		"drupal/mailsystem": "^4.3",
 		"drupal/mimemail": "^1.0@alpha",
 		"drupal/module_filter": "^3.1",
-		"drupal/panel": "^1.2",
 		"drupal/pathauto": "^1.8",
 		"drupal/shield": "^1.4",
 		"drupal/superfish": "^1.4",
