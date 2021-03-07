@@ -1,0 +1,5 @@
+name: 'Upper Realname'
+type: module
+description: 'Format realname (uppercase and no accent)'
+core_version_requirement: ^8 || ^9
+package: 'Latribunepresse'

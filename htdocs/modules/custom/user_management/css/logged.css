@@ -1,0 +1,26 @@
+/**
+ * @file
+ * Visual styles for Culturepresse's User management module content.
+ * User is logged in
+ */
+ 
+ /* USER LINKS (register | forgotten pass) on home page - custom block */
+#block-linksregisterresetpassword {
+  display: none;   
+}
+
+/** USER MENU **/
+nav#block-usermenu a {
+  font-size: 0.8em;
+  color: #333;  
+}
+
+/** get rid of picto 'power on' if logged  and no padding-bottom on li */
+nav#block-latribunepresse-account-menu-menu li, 
+nav#block-latribunepresse-account-menu li a {
+  background-image: none;
+  padding-bottom: 0;
+}
+nav#block-latribunepresse-account-menu-menu li li a {
+  margin-top: 0;
+}

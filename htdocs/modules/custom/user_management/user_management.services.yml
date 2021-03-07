@@ -1,0 +1,6 @@
+services:
+  user_management.exception403.subscriber:
+    class: Drupal\user_management\EventSubscriber\RedirectOn403
+    tags:
+      - { name: event_subscriber }
+    arguments: ['@current_user']

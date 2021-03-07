@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ivw
+label: 'IVW Tracking'
+group: tracking
+url: 'https://www.ivw.eu/digital/datenschutz-0'
+consent: true

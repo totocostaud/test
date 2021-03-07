@@ -1,0 +1,5 @@
+name: 'Webform Refus La tribune (mise à zéro du service)'
+type: module
+description: 'Register the refusal in Eudonet via the API'
+core_version_requirement: ^8 || ^9
+package: 'Latribunepresse'

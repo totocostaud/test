@@ -1,0 +1,21 @@
+banner:
+  version: 1.x
+  css:
+    theme:
+      css/banner.css: {}
+    
+takeover:
+  version: 1.x
+  css:
+    theme:
+      css/takeover.css: {}
+  js:
+    js/takeover.js: {}
+    
+interstitial:
+  version: 1.x
+  css:
+    theme:
+      css/interstitial.css: {}
+  js:
+    js/interstitial.js: {}

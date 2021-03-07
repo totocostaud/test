@@ -1,0 +1,13 @@
+ekiosk:
+  version: 1.x
+  css:
+    theme:
+      css/ekiosk.css: {}
+    
+numeros_parus:
+  version: 1.x
+  css:
+    theme:
+      css/numeros_parus.css: {}
+  js:
+    js/takeover.js: {}

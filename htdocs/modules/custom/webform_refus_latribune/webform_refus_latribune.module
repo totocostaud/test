@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Contains webform_refus_latribune.
+ *
+ *
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function webform_refus_latribune_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the webform_cet_autodiagnostic module.
+    case 'help.page.webform_refus_latribune':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Adding a link to Eudonet via API to register the refusal') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * @file
+ * Provides a custom webform handler.
+ */
+
+/**
+ * Implements hook_theme(). Ajout 01/12/22020 + template 
+ */
+function webform_refus_latribune_theme() {
+  return [
+      'webform_handler_myform_form_handler_summary' => [
+          'variables' => ['settings' => NULL, 'handler' => []],
+      ],
+  ];
+}

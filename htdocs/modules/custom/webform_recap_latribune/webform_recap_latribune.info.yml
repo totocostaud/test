@@ -1,0 +1,5 @@
+name: 'Webform Récap La tribune'
+type: module
+description: 'Create a recap page with a table of issues in a given range. Link to Eudonet via the API to check if subscriber or not.'
+core_version_requirement: ^8 || ^9
+package: 'Latribunepresse'

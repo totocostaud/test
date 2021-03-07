@@ -1,0 +1,8 @@
+langcode: en
+id: base
+status: true
+dependencies: {  }
+label: 'Required cookies'
+group: default
+url: /cookie-info
+consent: false

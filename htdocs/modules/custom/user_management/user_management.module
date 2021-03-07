@@ -1,0 +1,130 @@
+<?php
+
+/**
+ * @file
+ * Contains user_management.module.
+ *
+ * Change or hide labels in login forms
+ * Change links in user menu with 'Hello @realname'
+ * Allow loging with the email
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function user_management_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the user_management module.
+    case 'help.page.user_management':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Customization of User menu and User pages (account, register)') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_preprocessing_page
+ *
+ * 1 - Adding a global css file
+ * + another one allowing to hide user links (register | pass forgotten) when the user is logged in
+ *
+ */
+function user_management_preprocess_page(&$variables) {
+
+  // Adding the library containing the css file
+  $variables['#attached']['library'][] =  'user_management/user_management';
+
+  // Adding the other library (used in case the user is logged in)
+  if (! \Drupal::currentUser()->isAnonymous()) {
+    $variables['#attached']['library'][] =  'user_management/user_logged';
+  }
+}
+
+/**
+ * Implements hook_menu_alter().
+ * Changing the user menu link 'My Account' to Real name
+ */
+function user_management_link_alter(&$variables) {
+
+  $url = $variables['url'];
+  //ksm($variables);
+
+  if ($url->isRouted() && $url->getRouteName() == 'user.page') {
+    $route_name = $url->getRouteName();
+    if ($route_name != 'user.page') {
+      return;
+    }
+    elseif ($variables['text'] == t('My account')) {
+      $current= \Drupal::currentUser();
+      $uid = $current->id();
+      $user_object = \Drupal\user\Entity\User::load($uid);
+
+      // call to realname contrib module, .module file
+     /// \Drupal::moduleHandler()->invoke('realname', 'module', $args = array());
+     // $realname = realname_load($user_object);
+      // var_dump($realname); die();
+     // $variables['text'] = t('Bonjour @realname', ['@realname' => $realname]);
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter
+ * 1rst part : Changing description contents of the login form items in the body.path-user page
+ * Nota : descriptions ar on 'display:none' for the same form in the header
+ *
+ * 2nd part : changing label for email input
+ */
+ function user_management_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+   if ($form_id == 'user_login_form') {
+     $form['name'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Name'),
+      '#description' => t('Enter your name or your email'),
+     );
+     $form['pass'] = array(
+      '#type' => 'password',
+      '#title' => t('Password'),
+      '#description' => t('Enter your password'),
+     );
+   }
+
+   if ($form_id == 'user_pass') {
+     $form['name'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Email'),
+     );
+   }
+ }
+
+/**
+ * Implements hook_form_alter().
+ * allowing to LOG IN with EMAIL
+ * Doc : https://gist.github.com/johannez/161f8f488368c41f1d92aeb2245ece7f
+ */
+/**
+ * Implements hook_form_alter().
+ */
+function user_management_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  // Allow login with email.
+  array_unshift($form['#validate'], 'user_management_user_login_form_validate');
+}
+
+/**
+ * Callback to check for a valid email for login.
+ */
+function user_management_user_login_form_validate(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  if (!$form_state->isValueEmpty('name') && \Drupal::service('email.validator')->isValid($form_state->getValue('name'))) {
+    // Try to find a user name for this email.
+    if ($user = user_load_by_mail($form_state->getValue('name'))) {
+      $form_state->setValue('name', $user->getAccountName());
+    }
+  }
+}
+

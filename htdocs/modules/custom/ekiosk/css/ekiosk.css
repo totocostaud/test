@@ -1,0 +1,17 @@
+/**
+ * @file
+ * Styles for Latribunepresse's ekiosk page.
+ */
+
+body.path-ekiosk section {
+  width: 80%;
+}
+
+body.path-ekiosk section .views-col {
+  text-align: center;
+  margin: 1em 0 2em 0;
+}
+
+body.path-ekiosk section img {
+  border: 1px solid #EDEDED;
+}

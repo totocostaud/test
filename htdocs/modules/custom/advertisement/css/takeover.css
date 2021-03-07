@@ -1,0 +1,53 @@
+/**
+ * @file
+ * Visual styles for Culturepresse's Advertisement custom module.
+ * Takeover 
+ * 
+ * We need width: 100% et height: 100% in body for a centered takeover
+ *
+ * The 2 divs ('takeover-background-image' and 'takeover-top-margin')
+ * were added in 'page.html.twig'
+ * They are validated if the variables (takeover_link, takeover_source and takeover_top-margin)
+ * aren't empty in 'advertisement.module' after checking the database
+ * 
+ */
+
+#takeover-background-image {
+  display: block;
+  overflow: hidden;
+  /* text-indent: 1000%;*/
+  text-indent: 8000px;
+  white-space: nowrap;
+  cursor: pointer;
+  /* ajout lignes suivantes pour inversion des id */
+  width: 1600px;   /* obligatoire */
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-color: transparent;
+  background-position: 0 0;
+  background-size: auto auto;
+  height: 900px;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+/* compulsory if don't want to have the takeover link appearing over these elements */
+/*#main_menu, #messages-help-wrapper, #columns,*/
+.highligted,
+#page {
+  position: relative;
+}
+
+#takeover-background-image + span.ext {
+  display: none;
+}
+
+#takeover-top-margin {
+  display: none;
+}
+
+#takeover-background-image + svg { /* get rid of external link picto */
+  display: none;
+}

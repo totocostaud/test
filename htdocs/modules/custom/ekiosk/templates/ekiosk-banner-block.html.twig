@@ -1,0 +1,21 @@
+{#
+/**
+ * @file block--advertisement-banner-block.html.twig
+ * theme implementation to present Advertisement Banner.
+ *
+ * Available variables form advertisement_entity :
+ * Source file = advertisement/src/Plugin/Block/AdvertisementBannerBlock.php
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ */
+#}
+
+{% if content %}
+<div{{ attributes.addClass('advertisement_banner') }}>
+  <a href="{{ content['#link'] }}">  
+    <img src="{{ file_url(content['#uri']) }}" width="{{ content['#width'] }}" height="{{ content['#height'] }}"
+    alt="{{ content['#name'] }}" >
+  </a>  
+</div>
+{% endif %}

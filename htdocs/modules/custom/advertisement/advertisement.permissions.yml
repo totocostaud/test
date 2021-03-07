@@ -1,0 +1,20 @@
+add advertisement entity entities:
+  title: 'Create new Advertisement entity entities'
+
+administer advertisement entity entities:
+  title: 'Administer Advertisement entity entities'
+  description: 'Allow to access the administration form to configure Advertisement entity entities.'
+  restrict access: true
+
+delete advertisement entity entities:
+  title: 'Delete Advertisement entity entities'
+
+edit advertisement entity entities:
+  title: 'Edit Advertisement entity entities'
+
+view published advertisement entity entities:
+  title: 'View published Advertisement entity entities'
+
+view unpublished advertisement entity entities:
+  title: 'View unpublished Advertisement entity entities'
+

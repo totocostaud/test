@@ -1,0 +1,17 @@
+name: 'COOKiES Video'
+type: module
+description: 'Submodule of COOKiES to manage video media items (by "media" module) inside of COOKiES consent management.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'COOKiES'
+dependencies:
+  - cookies:cookies
+  - core:media
+
+libraries:
+  - cookies_video/default
+
+# Information added by Drupal.org packaging script on 2020-11-02
+version: '1.0.6'
+project: 'cookies'
+datestamp: 1604338251

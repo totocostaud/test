@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: recaptcha
+label: 'reCAPTCHA'
+group: tracking
+url: 'https://policies.google.com/privacy'
+consent: true

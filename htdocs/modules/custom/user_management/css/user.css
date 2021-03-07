@@ -1,0 +1,294 @@
+/**
+ * @file
+ * Visual styles for Culturepresse's User management module content.
+ */
+
+/* LOGIN LINK in header */ 
+nav#block-latribunepresse-account-menu  {
+    color: grey;
+     margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 5px;
+    right: 0.8em;
+    margin-top: 1em;
+}
+
+nav#block-latribunepresse-account-menu li a  {
+  color: #f5a51d;
+  background-image: url('/sites/default/files/images/theme/picto_login_on.png');
+  background-repeat: no-repeat;
+  background-position: 80% 20%;  
+  padding-bottom: 0.55em;
+  margin-left: 5em;
+}
+
+/* block LINK for CONNECTION ON MOBILE  (the login form is on display:none) */
+/*#block-linkforconnectiononmobile {
+  position: absolute;
+  top: 20px;
+  right: 14px; 
+}
+@media only screen and (min-width : 1168px)  {
+  #block-linkforconnectiononmobile {
+    display: none;
+  }
+}
+#block-linkforconnectiononmobile p,
+#block-linkforconnectiononmobile a {
+  color: #E5007D; 
+}   */
+
+
+/* 
+ * LOGIN FORM form in page body.path-user
+ * in reset password page (or one-time login url) => body.path-user #region form#user-login-form
+ */
+.region-content form#user-login-form {
+  height: 142px;
+  margin: 0 auto 40px auto; 
+  position: relative; 
+  display: block;
+}
+.region-content form#user-login-form div.form-type-textfield label {
+  width: 10em;
+  height: 34px;
+  line-height: 34px;
+  font-size: 0.9em;
+  color: #FFFFFF;
+  background-color: #f5a51d;
+  position: absolute;
+  top: 0;
+  left: 2%;
+}
+.region-content form#user-login-form div.form-item-name input {
+  height: 34px;
+  line-height: 34px;
+  width: 20em;
+  position: absolute;
+  top: 32px;
+  left: 2%;
+}
+body.path-user form#user-login-form #edit-name--description {
+  display: block;
+  position: absolute;
+  top: 69px;
+  left: 2%;
+}
+.region-content form#user-login-form div.form-type-password label {
+  display: none;
+}
+.region-content form#user-login-form input[type='password'] {
+  height: 34px;
+  line-height: 34px;
+  font-size: 0.9em;
+  margin-left: 0.02em;
+  position: absolute;
+  top: 94px;
+  left: 2%;
+  width: 14em;
+}
+.region-content form#user-login-form #edit-pass--description {
+  display: block;
+  position: absolute;
+  top: 130px;
+  left: 2%;
+}
+.region-content form#user-login-form input[type=submit] {
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  color: #FFFFFF;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0;
+  background-color: #f5a51d;
+  cursor: pointer;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  margin-top: -3px;
+  background-image: none;
+  position: absolute;
+  top: 99px;
+  left: 16em;
+}
+@media only screen and (max-width : 1024px)  {
+  .region-content form#user-login-form {
+    display: block;
+  }
+}
+
+/* USER MENU */
+#block-culturepresse-account-menu {
+  width : 20em;
+}
+#block-culturepresse-account-menu ul li.menu-item:first-child a {
+  font-size : 0.8em;
+}
+
+/* get rid of old links */
+.create-account-link,
+.request-password-link {
+  display: none;
+}
+
+/* USER LINKS (register | forgotten pass)  in user login page */
+/*body.path-user #block-liensmotdepasseoubliesenregistrerpageuserlogin .field__item {
+  display: block;
+  margin-top: 2em;
+  margin-left: 23.5%;
+}*/
+
+/* REGISTER form */
+form#user-register-form {
+  width: 85%;
+  margin: 10px 10px 30px 10px;
+  padding: 10px;
+  border: 1px solid #E85252;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+} 
+form#user-register-form label {
+  display: inline-block;
+  width: 8em; 
+}
+form#user-register-form #edit-field-firstname-0-value,
+form#user-register-form #edit-field-lastname-0-value,
+form#user-register-form #edit-field-city-0-value {
+  width: 14em;
+} 
+form#user-register-form #edit-field-cp-0-value {
+  width: 6em;
+} 
+form#user-register-form input {
+  width: 24em;
+  padding: 5px;
+  border: 1px solid #CCCCCC;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;  
+} 
+form#user-register-form input[type=submit] {
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  color: #FFFFFF;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0;
+  background-color: #f5a51d;
+  cursor: pointer;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  margin-top: -5px;
+  background-image: none;
+}  
+form#user-register-form input[type=submit]:hover  {
+  background-color: #CCCCCC;
+} 
+
+/* RESET password form */
+form#user-pass {
+  width: 85%;
+  margin: 10px 10px 30px 10px;
+  padding: 10px;
+  border: 1px solid #f5a51d;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
+form#user-pass input#edit-name {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;	
+} 
+form#user-pass input[type=submit] {
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  color: #FFFFFF;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0;
+  background-color: #f5a51d;
+  cursor: pointer;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  margin-top: -5px;
+  background-image: none;
+}
+
+/* User pass reset : submit button 'Se connecter' */
+/* User form : account form to change the user password */
+form.user-pass-reset,
+form.user-form {
+  width: 85%;
+  margin: 10px 10px 30px 10px;
+  padding: 10px;
+  border: 1px solid #E85252;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;	
+}
+
+form.user-pass-reset #edit-submit,
+form.user-form #edit-submit {
+  width: 124px;
+  height: 34px;
+  line-height: 34px;
+  color: #FFFFFF;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0;
+  background-color: #f5a51d;
+  cursor: pointer;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  margin-top: -5px;
+  background-image: none;	
+} 
+
+/* Profile page on custom themes/templates twig */
+body.path-user #user_details hr.user {
+  border-top: 1px dotted #EDEDED;
+}
+
+body.path-user #user_details div.field--name-field-nim,
+body.path-user #user_details div.field--name-field-firstname,
+body.path-user #user_details div.field--name-field-lastname,
+body.path-user #user_details div.field--name-field-post-code,
+body.path-user #user_details div.field--name-field-city {
+  display: inline-block;
+}
+
+/* added 26/11/2020 */
+#block-latribunepresse-local-tasks li [data-drupal-link-system-path="user/register"] {
+  display: none;
+}

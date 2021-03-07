@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: instagram
+label: 'Instagram'
+group: social
+url: 'https://help.instagram.com/196883487377501'
+consent: true

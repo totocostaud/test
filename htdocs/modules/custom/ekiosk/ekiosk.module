@@ -1,0 +1,128 @@
+<?php
+
+/**
+ * @file
+ * Contains ekiosk.module.
+ *
+ */
+
+use Drupal\file\Entity\File;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ekiosk_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ekiosk module.
+    case 'help.page.ekiosk':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('REgistering La Tribune issues and create access to a a Flipbook') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ekiosk_theme() {
+
+  $theme = [];
+
+  $theme['ekiosk_entity_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'ekiosk_entity.page.inc',
+  ];
+  
+  $theme['ekiosk'] = array(
+      'render element' => 'elements',
+      'file' => 'ekiosk.page.inc',
+      'template' => 'ekiosk',
+  );
+  
+  return $theme;
+}
+
+/**
+ * Checking if there's a takeover to display call get_takeover() function
+ *
+ * If there's one, implements hook_preprocessing_page
+ * to add 4 variables in the theme (checking for them in 'page.html.twig') and a css and a js file
+ */
+function ekiosk_preprocess_page(&$variables) {
+
+  // Adding 2 libraries for css and js files
+	$variables['#attached']['library'][] =  'ekiosk/ekiosk';
+	$variables['#attached']['library'][] =  'ekiosk/numeros_parus';
+}
+
+/**
+ * Implements hook_preprocessing_block for banner
+ * to add a css file
+ */
+/*function ekiosk_preprocess_block(&$variables) {
+  $variables['#attached']['library'][] =  'advertisement/banner';
+}*/
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+/*function ekiosk_theme_suggestions_advertisement_entity(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#ekiosk_entity'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'ekiosk_entity__' . $sanitized_view_mode;
+  $suggestions[] = 'ekiosk_entity__' . $entity->bundle();
+  $suggestions[] = 'ekiosk_entity__interstitial';
+  $suggestions[] = 'ekiosk_entity__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'ekiosk_entity__' . $entity->id();
+  $suggestions[] = 'ekiosk_entity__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}*/
+
+/**
+  * ekiosk issues request
+  *
+  * @return array.
+  */
+function get_last_issues() {
+
+  /*$today = date('Y-m-d');
+  // var_dump($today);
+
+  // check  in the database if there's a takeover to display
+  $query = \Drupal::entityQuery('ekiosk_entity');
+  $query->condition('type', 'takeover');
+  $query->condition('adv_start', $today, '<=');
+  $query->condition('adv_end', $today, '>=');
+
+  $entity_ids = $query->execute();
+  //var_dump($entity_ids);
+
+  if ($entity_ids) {
+    $takeover = \Drupal::entityTypeManager()->getStorage('ekiosk_entity')->loadMultiple($entity_ids);
+
+    foreach ($takeover as $t){
+     $name = $t->get('name')->value;
+     $file = $t->get('adv_file')->target_id;
+     // get the address of the image file
+     $ad = File::load($file);
+     $source = file_create_url($ad->getFileUri()); // url absolue
+     $link = $t->get('adv_link')->value;
+     $top_margin = $t->get('field_adv_top_margin')->value;
+   }
+
+   return array (
+    'name' => $name,
+    'source' => $source,
+    'link' => $link,
+    'top_margin' => $top_margin,
+    );
+  }*/
+  }
+

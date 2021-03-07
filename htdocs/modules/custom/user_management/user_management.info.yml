@@ -1,0 +1,5 @@
+name: 'User Management'
+type: module
+description: 'Customization of User menu and User pages (account, register)'
+core_version_requirement: ^8 || ^9
+package: 'Latribunepresse'

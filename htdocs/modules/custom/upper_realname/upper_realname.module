@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ * Contains upper_realname.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function upper_realname_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the upper_realname module.
+    case 'help.page.upper_realname':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Format realname (uppercase and no accent)') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Taken from Realname API
+ * Alter a user's real name before it is saved to the database.
+ *
+ * @param string $realname
+ *   The user's generated real name.
+ * @param object $account
+ *   A user account object.
+ *
+ * @see realname_update()
+ *
+ * @ingroup realname
+ */
+function upper_realname_realname_alter(&$realname, $account) {
+
+  /* If we come from register form, the variables have yet been formatted in user_registration module
+  to validate the form and check the membership of the user */
+  global $prenom, $nom, $ville;
+
+  if (isset($prenom) && isset( $nom)) {
+    $realname = $prenom . ' ' . $nom ;
+  }
+  else
+  { /* if we come from an account update, we'll have to use the param 'realname' */
+    // Formatting $nom and $prenom
+    module_load_include('inc', 'registration_process');
+    $realname = clean($realname);
+  }
+}

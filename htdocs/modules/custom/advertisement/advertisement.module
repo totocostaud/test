@@ -1,0 +1,190 @@
+<?php
+
+/**
+ * @file
+ * Contains advertisement.module.
+ *
+ * Block
+ * They're managed via a plugin block Class
+ *
+ * Interstitial
+ * The display is managed in template 'page.html.twig'
+ * where a few lines were added (53 -> 62)
+ * to check the presence of takeover_name variable
+ */
+
+use Drupal\file\Entity\File;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function advertisement_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the advertisement module.
+    case 'help.page.advertisement':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Creation and display of advertisements') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function advertisement_theme() {
+
+  $theme = [];
+  $theme['advertisement-banner-block'] = [
+    'render element' => 'content',
+  ];
+  $theme['advertisement_entity_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'advertisement_entity.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Checking if there's a takeover to display call get_takeover() function
+ *
+ * If there's one, implements hook_preprocessing_page
+ * to add 4 variables in the theme (checking for them in 'page.html.twig') and a css and a js file
+ */
+function advertisement_preprocess_page(&$variables) {
+
+  $takeover = get_takeover();
+  // var_dump($takeover);
+
+  if (isset($takeover) && $takeover != "") {
+
+	$variables['takeover_name'] = $takeover['name'];
+    $variables['takeover_source'] = $takeover['source'];
+    $variables['takeover_link'] = $takeover['link'];
+    $variables['takeover_top_margin'] = $takeover['top_margin'];
+
+    // Adding the library containing 2 css and a js file
+	$variables['#attached']['library'][] =  'advertisement/takeover';
+  }
+
+  $interstitial = get_interstitial();
+  // var_dump($interstitial);
+
+  if (isset($interstitial) && $interstitial != "") {
+
+    $variables['interstitial_name'] = $interstitial['name'];
+    $variables['interstitial_source'] = $interstitial['source'];
+    $variables['interstitial_link'] = $interstitial['link'];;
+
+    // Adding the library containing a css and a js file
+    $variables['#attached']['library'][] =  'advertisement/interstitial';
+  }
+}
+
+/**
+ * Implements hook_preprocessing_block for banner
+ * to add a css file
+ */
+function advertisement_preprocess_block(&$variables) {
+  $variables['#attached']['library'][] =  'advertisement/banner';
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+/*function advertisement_theme_suggestions_advertisement_entity(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#advertisement_entity'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'advertisement_entity__' . $sanitized_view_mode;
+  $suggestions[] = 'advertisement_entity__' . $entity->bundle();
+  $suggestions[] = 'advertisement_entity__interstitial';
+  $suggestions[] = 'advertisement_entity__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'advertisement_entity__' . $entity->id();
+  $suggestions[] = 'advertisement_entity__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}*/
+
+/**
+  * Advertisement Takeover request
+  *
+  * @return array.
+  */
+function get_takeover() {
+
+  $today = date('Y-m-d');
+  // var_dump($today);
+
+  // check  in the database if there's a takeover to display
+  $query = \Drupal::entityQuery('advertisement_entity');
+  $query->condition('type', 'takeover');
+  $query->condition('adv_start', $today, '<=');
+  $query->condition('adv_end', $today, '>=');
+
+  $entity_ids = $query->execute();
+  //var_dump($entity_ids);
+
+  if ($entity_ids) {
+    $takeover = \Drupal::entityTypeManager()->getStorage('advertisement_entity')->loadMultiple($entity_ids);
+
+   foreach ($takeover as $t){
+     $name = $t->get('name')->value;
+     $file = $t->get('adv_file')->target_id;
+     // get the address of the image file
+     $ad = File::load($file);
+     $source = file_create_url($ad->getFileUri()); // url absolue
+     $link = $t->get('adv_link')->value;
+     $top_margin = $t->get('field_adv_top_margin')->value;
+   }
+
+   return array (
+    'name' => $name,
+    'source' => $source,
+    'link' => $link,
+    'top_margin' => $top_margin,
+    );
+  }
+}
+
+/**
+  * Advertisement Interstitial request
+  *
+  * @return array.
+  */
+function get_interstitial() {
+
+  $today = date('Y-m-d');
+
+  // check if there is an interstitial in the database
+  $query = \Drupal::entityQuery('advertisement_entity');
+  $query->condition('type', 'interstitial');
+  $query->condition('adv_start', $today, '<=');
+  $query->condition('adv_end', $today, '>=');
+
+  $entity_ids = $query->execute();
+
+  if ($entity_ids) {
+    // kint($entity_ids);
+    $interstitial = \Drupal::entityTypeManager()->getStorage('advertisement_entity')->loadMultiple($entity_ids);
+
+    foreach ($interstitial as $i){
+      $name = $i->get('name')->value;
+      $file = $i->get('adv_file')->target_id;
+      // get the address of the image file
+      $ad = File::load($file);
+      $source = file_create_url($ad->getFileUri());
+      $link = $i->get('adv_link')->value;
+    }
+
+    return array (
+      'name' => $name,
+      'source' => $source,
+      'link' => $link,
+    );
+  }
+}

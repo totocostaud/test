@@ -1,0 +1,10 @@
+entity.advertisement_entity.add_form:
+  route_name: entity.advertisement_entity.add_page
+  title: 'Add Advertisement entity'
+  appears_on:
+    - entity.advertisement_entity.collection
+entity.advertisement_entity_type.add_form:
+  route_name: entity.advertisement_entity_type.add_form
+  title: 'Add Advertisement entity type'
+  appears_on:
+    - entity.advertisement_entity_type.collection

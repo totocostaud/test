@@ -1,0 +1,5 @@
+name: 'Ekiosk'
+type: module
+description: 'Registering La Tribune issues and link to a flipbook'
+core_version_requirement: ^8 || ^9
+package: 'Latribunepresse'

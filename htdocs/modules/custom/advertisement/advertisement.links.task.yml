@@ -1,0 +1,17 @@
+# Advertisement entity routing definition
+
+entity.advertisement_entity.canonical:
+  route_name: entity.advertisement_entity.canonical
+  base_route: entity.advertisement_entity.canonical
+  title: 'View'
+
+entity.advertisement_entity.edit_form:
+  route_name: entity.advertisement_entity.edit_form
+  base_route: entity.advertisement_entity.canonical
+  title: 'Edit'
+
+entity.advertisement_entity.delete_form:
+  route_name:  entity.advertisement_entity.delete_form
+  base_route:  entity.advertisement_entity.canonical
+  title: Delete
+  weight: 10

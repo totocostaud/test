@@ -1,0 +1,25 @@
+cookies.cookies_service.*:
+  type: config_entity
+  label: 'COOKiES service'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    group:
+      type: string
+      label: 'Group'
+    url:
+      type: label
+      translatable: true
+      label: 'Url'
+    consent:
+      type: boolean
+      label: 'Consent required'
+    uuid:
+      type: string
+    langcode:
+      type: string 
+      label: 'Language code'

@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Contains webform_recap_latribune.
+ *
+ *
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function webform_recap_latribune_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the webform_recap_latribune module.
+    case 'help.page.webform_recap_latribune':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('After a check for the subscription in Eudonet via the API, create a page with issues and prices') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * @file
+ * Provides a custom webform handler.
+ */
+
+/**
+ * Implements hook_theme(). Ajout 01/12/22020 + template 
+ */
+function webform_recap_latribune_theme() {
+  return [
+      'webform_handler_myform_form_handler_summary' => [
+          'variables' => ['settings' => NULL, 'handler' => []],
+      ],
+  ];
+}

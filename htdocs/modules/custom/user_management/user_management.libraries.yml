@@ -1,0 +1,11 @@
+user_management:
+  version: 1.x
+  css:
+    theme:
+      css/user.css: {}
+      
+user_logged:
+  version: 1.x
+  css:
+    theme:
+      css/logged.css: {}      

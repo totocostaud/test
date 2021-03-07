@@ -1,0 +1,7 @@
+recaplatribune.createpdf:
+  path: '/latribune/recap/{beginning}/{ending}'
+  defaults:
+    _controller: '\Drupal\webform_recap_latribune\Controller\RecapController::createPdf'
+    _title: 'Récapitulatif des numéros parus'
+  requirements:
+    _permission: 'access content'

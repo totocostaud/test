@@ -1,0 +1,5 @@
+name: 'Advertisement'
+type: module
+description: 'Creation and display of advertisements'
+core_version_requirement: ^8 || ^9
+package: 'Latribunepresse'

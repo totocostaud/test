@@ -1,0 +1,17 @@
+
+# Ekiosk entity menu items definition
+entity.ekiosk_entity.collection:
+  title: 'Ekiosk entity list'
+  route_name: entity.ekiosk_entity.collection
+  description: 'List Ekiosk entity entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Ekiosk entity type menu items definition
+entity.ekiosk_entity_type.collection:
+  title: 'Ekiosk entity type'
+  route_name: entity.ekiosk_entity_type.collection
+  description: 'List Ekiosk entity type (bundles)'
+  parent: system.admin_structure
+  weight: 99

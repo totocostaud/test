@@ -1,0 +1,20 @@
+add ekiosk entity entities:
+  title: 'Create new Ekiosk entity entities'
+
+administer ekiosk entity entities:
+  title: 'Administer Ekiosk entity entities'
+  description: 'Allow to access the administration form to configure Ekiosk entity entities.'
+  restrict access: true
+
+delete ekiosk entity entities:
+  title: 'Delete Ekiosk entity entities'
+
+edit ekiosk entity entities:
+  title: 'Edit Ekiosk entity entities'
+
+view published ekiosk entity entities:
+  title: 'View published Ekiosk entity entities'
+
+view unpublished ekiosk entity entities:
+  title: 'View unpublished Ekiosk entity entities'
+
