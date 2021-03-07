@@ -1,0 +1,6 @@
+panel.admin:
+  title: 'Control panel'
+  description: 'Go to Control Panel'
+  parent: account
+  menu_name: account
+  url: internal:/panel

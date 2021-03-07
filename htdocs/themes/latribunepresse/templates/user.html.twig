@@ -1,0 +1,48 @@
+{#
+/**
+ * @file user.html.twig
+ * theme displaying the user profile page.
+ * Adding the membership 'Adhérent de Culture Presse'
+ * Adding a white space before the semi-colons
+ * Drupal behavior is [nom: $nom] and we want [nom : $nom] 
+ *
+ */
+#}
+<div id="user_details">
+<article{{ attributes }}>
+
+  {% if content %}
+    
+    <h2>Adhérent(e) de Culture Presse</h2>
+    <hr class="user">
+    
+    {% if elements.field_nim %}
+      <h2>NIM : {{ elements.field_nim }}</h2>
+    {% endif %} 
+     
+    <hr class="user">
+    
+    {% if elements.field_firstname %}
+      Prénom : {{ elements.field_firstname }}
+    {% endif %}
+    <br>
+    {% if elements.field_lastname %}
+      Nom : {{ elements.field_lastname }}
+    {% endif %}
+    <br>   
+    {% if elements.field_post_code %}
+      Code postal : {{ elements.field_post_code }}
+    {% endif %}
+    <br>
+    {% if elements.field_city %}
+      Ville : {{ elements.field_city }}
+    {% endif %} 
+    <br>
+    {% if elements.member_for %}
+      {{ elements.member_for }}
+    {% endif %}  
+    
+  {% endif %}
+
+</article>
+</div>

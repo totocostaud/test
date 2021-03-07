@@ -1,0 +1,44 @@
+/**
+ * @file
+ * Overall specifications for Latribunepresse.
+ */
+
+input[type="submit"] {
+  /* Remove default in Safari*/
+  -webkit-appearance: none;
+}
+
+/**
+ *
+ * Search block form (initial for desktop)
+ *
+ **/
+#block-latribunepresse-search {
+  height: 3em;
+} 
+
+input#edit-keys {
+  height: 34px;
+  line-height: 34px;
+}
+
+#search-block-form #edit-submit {
+  width: 32px;
+  height: 32px;
+  line-height: 32px; /* new */
+  cursor: pointer; 
+  text-indent: -9999px;
+  border: none;
+  background-color: transparent;
+  background: url('/sites/default/files/images/theme/btn_search_sprite.png') 0 0 no-repeat;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+
+#search-block-form #edit-submit:hover {
+  background: url('/sites/default/files/images/theme/btn_search_sprite.png') 0 -34px no-repeat;
+}
+

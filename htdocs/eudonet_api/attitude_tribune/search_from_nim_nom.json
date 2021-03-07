@@ -1,0 +1,71 @@
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'x-auth: +JaH7iPc51aFDIr5HXmGpcSz7Kuv/ENY1pWuPHAwkmtIIZdsmKKyJ81Bn582pntIssZLuZdgN4Xx5Dii+r14nR0XPovkhd++uN1taLgT+wO3dBAZO1zWKmkC89J6alpf2UwpMDrA/xYeqKgeAnyTtYzNatWMGXMhL+QL/r/5AEbhV8KSRr3aMdpX4jIs7zYKEWacQvpWGAsFtNvO5e2of8wLCV+yRHxZCDrBOLwUl63YMw+/FClcE0L5OW89w+k2k8p9vJuEQ8H4DlWwWNyyrRAP4NBmuJL31U80WwyOEqqZ8Gxoqvhz5E2+EN0=' -d '{
+  "ShowMetadata": true,
+  "RowsPerPage": 0,
+  "NumPage": 0,
+  "ListCols": [
+   201,218
+  ],
+  "WhereCustom": { 
+    
+    "WhereCustoms": [
+    {
+      "WhereCustoms": null,
+        "Criteria": { 
+        "Operator": 0,
+        "Field": "341",
+        "Value": "0380596"
+      },
+    "InterOperator": 0
+    },
+
+    {
+    "WhereCustoms": null,
+      "Criteria": {
+        "Operator": 0,
+        "Field": "327",
+        "Value": 0
+      },
+    "InterOperator":1
+    },
+
+    {
+    "WhereCustoms": null,
+      "Criteria": { 
+        "Operator":0,
+        "Field": "353",
+        "Value": 0
+      },
+    "InterOperator": 1
+    },
+
+   {
+    "WhereCustoms": null,
+      "Criteria": { 
+        "Operator":0,
+        "Field": "411",
+        "Value": 1
+      },
+    "InterOperator": 1
+    },
+
+     {
+    "WhereCustoms": null,
+      "Criteria": { 
+        "Operator":0,
+        "Field": "412",
+        "Value": 1
+      },
+    "InterOperator": 1
+    }
+  ],
+
+  "Criteria": null,
+  "InterOperator": 0
+  },
+  "OrderBy": [
+  { 
+    "DescId":0,
+    "Order":0
+   }
+  ]
+}' 'http://xrm3.eudonet.com/EudoAPI/Search/300'

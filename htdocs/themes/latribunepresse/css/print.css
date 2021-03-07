@@ -1,0 +1,25 @@
+/**
+ * @file
+ * Overall specifications for Culturepresse.
+ */
+
+@media print {
+  body {
+    font-size: 0.4em;
+  }
+
+  hr {
+    color: #EDEDED;
+    line-height: 1;
+  }
+  
+  h1 {
+    font-size: 0.8em;
+  }
+
+  div.print__wrapper--pdf {
+    display: none; 
+  }
+}  
+
+

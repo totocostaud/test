@@ -1,0 +1,31 @@
+
+{#
+/**
+ * @file
+ * theme implementation to display a message in HTML with logo.
+ *
+ *
+ * @ingroup themeable
+ */
+#}
+
+<html>
+<head>
+  <style type="text/css">
+    p {
+      font-family: Candara;
+      font-size: 16px;
+    }
+    </style>
+</head>
+<body>
+
+ {% set base_url = url('<front>')  %}
+ <a href="{{ url('<front>') }}"><img src="{{ base_url }}/sites/default/files/logo_culturepresse_403x92.png" width="403" height="92" alt="Culture Presse"></a>
+ <hr> 
+ 
+{{ body }}  
+{# {{ body | nl2br }}  #}
+  
+ </body>
+</html>

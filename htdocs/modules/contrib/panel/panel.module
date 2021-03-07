@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains panel.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function panel_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the panel module.
+    case 'help.page.panel':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Control panel') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function panel_theme() {
+  return [
+    'panel' => [
+      'render element' => 'children',
+    ],
+  ];
+}

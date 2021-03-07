@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Custom theme implementation to print a pdf.
+ *
+ * @ingroup themeable
+ */
+#}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    {{ entity_print_css }}
+</head>
+<body>
+<header>
+    <img src="http://culturepresse/sites/default/files/images/logo/logo_culture_presse_300dpi_810x183_print_entity.jpg"  width="410" height="92" alt="Culturepresse">
+</header>
+
+<hr>
+
+<div class="page">
+    {{ content }}
+</div>
+
+<hr>
+
+<footer> 
+    <p>Culture Presse - 16 place de la République 75010 Paris - Tél : 01 42 40 27 15</p>
+</footer>
+
+</body>
+</html>

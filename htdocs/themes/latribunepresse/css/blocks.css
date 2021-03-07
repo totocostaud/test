@@ -1,0 +1,188 @@
+/**
+ * @file
+ * Visual styles for Culturepresse's blocks.
+ */
+
+/**  
+ * E-KIOSK
+ * FOOTER
+ *
+ * + Masquerade + who's online
+ */
+
+#block-ekiosklink img,
+#block-ekiosklink p + p {
+  display: block;
+  float: left;
+}
+#block-ekiosklink p + p {
+  max-width: 8em;
+}
+#block-ekiosklink p + p {
+  padding-left: 0.5em;
+} 
+
+#block-block-19 img,
+#block-block-19 div.pa_text,
+#block-block-20 img,
+#block-block-20 div.ekiosk_text {
+    display: block;
+    float: left;
+} 
+
+#block-block-19 div.pa_text,
+#block-block-20 div.ekiosk_text {
+    padding-left: 0.5em;
+} 
+
+.featured-bottom {
+  background-color: #FCFCFC;
+}
+ 
+#block-logolinktounionpressefr,
+#block-logolinktoculturepressefr,
+#block-logolinktolatribunepressefr {
+  margin: auto auto;
+  background-color: #FFF;
+  text-align: center;
+  height: 200px;
+ }
+#block-logolinktoculturepressefr img {
+  margin: 2em 0 0 0;
+ }
+#block-logolinktounionpressefr img {
+  margin: 3.5em 0 0.5em 0;
+ }
+#block-logolinktolatribunepressefr img {
+  margin: 1em 0 0.5em 0;
+ }
+ 
+#block-bloclienverslapagedescriptiveexpopresse,
+#block-block-podcasts,
+#block-blocdelienversquivousrepresenteaculturepresse,
+#block-verslautodiagnosticetlattestation,
+#block-views-block-agenda-culture-presse-block-1,
+#block-masquerade,#block-views-block-who-s-online-who-s-online-block {
+  width: 90%;
+  background-color: #F8F8F8;
+  padding: 0 0.2em;
+  border: 2px solid #EDEDED;
+  clear: both;
+}
+
+#block-bloclienverslapagedescriptiveexpopresse h2,
+#block-block-podcasts h2,
+#block-blocdelienversquivousrepresenteaculturepresse h2,
+#block-verslautodiagnosticetlattestation h2,
+#block-views-block-agenda-culture-presse-block-1 h2 {
+  font-size: 1.6em;
+  color: #937300;
+  text-transform: none;
+  margin-top: 0.8em;
+}
+#block-bloclienverslapagedescriptiveexpopresse h2 { /*bg image */
+  background-image : url('/sites/default/files/images/theme/block_liens/picto_expopresse.png');
+  background-repeat: no-repeat; 
+  background-position: 0 0;
+  margin-top: 0.2em;
+  padding: 0.2em 0 0.5em 2.5em; 
+  line-height: 1.6em;
+}
+
+#block-block-podcasts h2 { /*bg image */
+  background-image : url('/sites/default/files/images/theme/block_liens/picto_podcast.png');
+  background-repeat: no-repeat; 
+  background-position: 0 10%;
+  margin-top: 0.2em;
+  padding: 0.5em 0 0.5em 2.5em;
+  line-height: 1.6em;
+}
+
+#block-blocdelienversquivousrepresenteaculturepresse h2 {
+  line-height: 1em;
+  background-image: url('/sites/default/files/images/theme/block_liens/picto-qui-vous-represente.png');
+  background-repeat: no-repeat;
+  background-position: 0 15%;
+  margin-top: 0.2em;
+  padding: 0.5em 0 1em 3.8em;
+  width: 4.3em;
+  word-wrap: break-word; 
+}
+
+#block-verslautodiagnosticetlattestation h2 {
+  background-image : url('/sites/default/files/images/theme/block_liens/picto_cet.png');
+  background-repeat: no-repeat; 
+  background-position: 0 0;
+  margin-top: 0.2em;
+  padding: 0.2em 0 0.5em 2.5em; 
+  line-height: 1em;
+  width: 4.3em;
+  word-wrap: break-word;
+}
+
+#block-block-podcasts p a,
+#block-blocdelienversquivousrepresenteaculturepresse p a {
+  line-height: 1em;
+  background-image: url('/sites/default/files/images/theme/picto_sous_menu_page.png');
+  background-repeat: no-repeat;
+  background-position: 0 30%;
+  margin-top: 0.2em;
+  padding: 0.5em 0 1em 1.8em;
+  width: 4.3em;
+  word-wrap: break-word; 
+}
+
+#block-views-block-agenda-culture-presse-block-1 time {
+  font-size: 1em;
+  border: 1px solid #FF6600;
+  padding: 0 0.5em;
+}
+
+#block-views-block-agenda-culture-presse-block-1 .views-field-title {
+  font-size: 1.1em;
+  font-weight: normal;
+  color: #CC9900;
+  background-image : url('/sites/default/files/images/theme/puce_agenda_culturepresse.png');
+  background-repeat: no-repeat;
+  background-position : 0 6px;
+  padding: 0 0 0 1em;
+}
+
+#block-views-block-agenda-culture-presse-block-1 .views-field-field-event-description {
+  border-bottom: 1px solid #EDEDED;
+  padding: 0 0 0.3em 1em;
+}
+
+#block-views-block-agenda-culture-presse-block-1 .views-field-field-event-location {
+  color: #CC9966;
+  font-style: italic;
+  line-height: 0.95em;
+  padding: 0.2em 0 0.6em 1em;
+}
+     
+#block-views-block-agenda-culture-presse-block-1 .views-row {
+  padding-top: 1em;
+  border-bottom: 1px solid #CC9900;
+}
+
+.voir {
+  background-image: url('/sites/default/files/images/theme/picto_sous_menu_page.png');
+  background-repeat: no-repeat;
+  background-position: 0 40%;
+  background-color: #FFF;
+  padding: 0.2em 0.5em 0.3em 1.5em;
+}
+
+#block-copyrightcoordonneesculturepressecontactmentionslegales p {
+  text-align: center;
+}
+#block-copyrightcoordonneesculturepressecontactmentionslegales a {
+  color: #e5007d;
+  text-decoration: none !important;
+  border:none;
+}
+#block-copyrightcoordonneesculturepressecontactmentionslegales a.discret {
+  color: #666666;
+  text-decoration: none !important;
+  border:none;
+}

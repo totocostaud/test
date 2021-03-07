@@ -1,0 +1,14 @@
+{
+  "name": "drupal/panel",
+  "type": "drupal-module",
+  "description": "Control panel for site administrators",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/panel",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/panel",
+    "source": "http://cgit.drupalcode.org/panel"
+  },
+  "require": { }
+}
